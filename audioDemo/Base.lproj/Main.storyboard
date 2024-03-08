@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2d0-Qa-pTq">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Demo View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="demoViewController" id="BYZ-38-t0r" customClass="demoViewController" customModule="audioDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yJz-8P-ffL">
+                                <rect key="frame" x="20" y="114" width="374" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="noiseLevelView" destination="yJz-8P-ffL" id="v9H-M6-2Hl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="65.625"/>
+        </scene>
+        <!--Waveform View Controller-->
+        <scene sceneID="Q2L-93-fIV">
+            <objects>
+                <viewController storyboardIdentifier="WaveformViewController" id="ikS-Ml-YBp" customClass="WaveformViewController" customModule="audioDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bcw-bD-xnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="WaveformView" translatesAutoresizingMaskIntoConstraints="NO" id="S6j-Tf-IcP" customClass="WaveformView" customModule="audioDemo" customModuleProvider="target">
+                                <rect key="frame" x="21.333333333333343" y="449.33333333333331" width="385.33333333333326" height="37.333333333333314"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jG-zU-2qv">
+                                <rect key="frame" x="132" y="660" width="164" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="M7d-t5-jB9">
+                                <rect key="frame" x="21" y="449.33333333333331" width="386" height="37.333333333333314"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="progressTintColor" white="0.0" alpha="0.26000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <slider opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yaH-q7-Lwm">
+                                <rect key="frame" x="19" y="449.33333333333331" width="390" height="38.333333333333314"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="minimumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="playerIndicatorValueChanged:" destination="ikS-Ml-YBp" eventType="valueChanged" id="wkw-ae-gHe"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Gkt-g6-aGG"/>
+                        <color key="backgroundColor" red="0.090360112490000005" green="0.082087211310000005" blue="0.094488836820000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yaH-q7-Lwm" firstAttribute="height" secondItem="S6j-Tf-IcP" secondAttribute="height" id="1Eh-Ka-0dy"/>
+                            <constraint firstItem="yaH-q7-Lwm" firstAttribute="width" secondItem="S6j-Tf-IcP" secondAttribute="width" multiplier="1.00173" id="46S-ZY-awk"/>
+                            <constraint firstItem="S6j-Tf-IcP" firstAttribute="centerY" secondItem="Gkt-g6-aGG" secondAttribute="centerY" id="7y7-QI-qIW"/>
+                            <constraint firstItem="S6j-Tf-IcP" firstAttribute="height" secondItem="bcw-bD-xnJ" secondAttribute="height" multiplier="0.04" id="AJb-J4-Wc9"/>
+                            <constraint firstItem="yaH-q7-Lwm" firstAttribute="centerY" secondItem="S6j-Tf-IcP" secondAttribute="centerY" id="EXY-oA-bDh"/>
+                            <constraint firstItem="yaH-q7-Lwm" firstAttribute="centerX" secondItem="S6j-Tf-IcP" secondAttribute="centerX" id="RLk-Lx-hSk"/>
+                            <constraint firstItem="M7d-t5-jB9" firstAttribute="centerX" secondItem="S6j-Tf-IcP" secondAttribute="centerX" id="VbC-su-4Fd"/>
+                            <constraint firstItem="M7d-t5-jB9" firstAttribute="width" secondItem="S6j-Tf-IcP" secondAttribute="width" multiplier="1.00173" id="cEU-T4-pSy"/>
+                            <constraint firstItem="S6j-Tf-IcP" firstAttribute="width" secondItem="bcw-bD-xnJ" secondAttribute="width" multiplier="0.9" id="hUj-lx-ifE"/>
+                            <constraint firstItem="M7d-t5-jB9" firstAttribute="centerY" secondItem="S6j-Tf-IcP" secondAttribute="centerY" id="ln7-Ur-bEI"/>
+                            <constraint firstItem="S6j-Tf-IcP" firstAttribute="centerX" secondItem="Gkt-g6-aGG" secondAttribute="centerX" id="swy-ZD-Xf0"/>
+                            <constraint firstItem="M7d-t5-jB9" firstAttribute="height" secondItem="S6j-Tf-IcP" secondAttribute="height" id="yGd-gq-IHl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WaveImg" destination="S6j-Tf-IcP" id="VQj-Ne-csH"/>
+                        <outlet property="playButton" destination="6jG-zU-2qv" id="fpt-Bd-aWa"/>
+                        <outlet property="playerIndicator" destination="M7d-t5-jB9" id="sDD-FP-tti"/>
+                        <outlet property="slider" destination="yaH-q7-Lwm" id="2Xu-0n-x7Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yl1-L5-Xel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738.78504672897191" y="80.993520518358537"/>
+        </scene>
+        <!--Music Player View Controller-->
+        <scene sceneID="Ygj-U2-8vH">
+            <objects>
+                <viewController storyboardIdentifier="MusicPlayerViewController" id="E2S-1W-cKX" customClass="MusicPlayerViewController" customModule="audioDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgj-a8-s1z">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uco-Kg-mAv">
+                                <rect key="frame" x="152" y="735" width="125" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="playPauseButtonTapped:" destination="E2S-1W-cKX" eventType="touchUpInside" id="5Ef-6R-iGd"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8cc-we-fFE">
+                                <rect key="frame" x="61" y="697" width="305" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="progressTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="F9h-8y-usV">
+                                <rect key="frame" x="59" y="685" width="309" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="maximumTrackTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="playerIndicatorValueChanged:" destination="E2S-1W-cKX" eventType="valueChanged" id="WzD-oq-2gl"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mQj-iB-FGL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="uco-Kg-mAv" id="3o8-HK-qA8"/>
+                        <outlet property="playerIndicator" destination="8cc-we-fFE" id="SpA-xB-wZK"/>
+                        <outlet property="slider" destination="F9h-8y-usV" id="nJE-YR-DWI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVT-aP-fSv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589.7196261682243" y="80.993520518358537"/>
+        </scene>
+        <!--Custom Player View-->
+        <scene sceneID="gAw-XY-26i">
+            <objects>
+                <viewController storyboardIdentifier="CustomPlayerView" id="2d0-Qa-pTq" customClass="CustomPlayerView" customModule="audioDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4rL-Vd-UXd">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEB-zE-JUf">
+                                <rect key="frame" x="42.666666666666657" y="684" width="342.66666666666674" height="37"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QWM-Xn-dSA">
+                                <rect key="frame" x="180.66666666666666" y="761" width="67" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="SwU-9O-59F"/>
+                                    <constraint firstAttribute="width" constant="67" id="wZy-i7-Nmt"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Play"/>
+                                <connections>
+                                    <action selector="playPauseButtonTapped:" destination="2d0-Qa-pTq" eventType="touchUpInside" id="gGd-xr-37b"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-8w-4RH">
+                                <rect key="frame" x="42.666666666666664" y="731" width="30.999999999999993" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kat-UI-1gB">
+                                <rect key="frame" x="354.33333333333331" y="731" width="31" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ik2-ss-Ft2"/>
+                        <color key="backgroundColor" red="0.090360112490000005" green="0.082087211310000005" blue="0.094488836820000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FEB-zE-JUf" firstAttribute="centerX" secondItem="ik2-ss-Ft2" secondAttribute="centerX" id="1BZ-1s-66y"/>
+                            <constraint firstItem="Kat-UI-1gB" firstAttribute="top" secondItem="FEB-zE-JUf" secondAttribute="bottom" constant="10" id="1ws-rj-Scs"/>
+                            <constraint firstItem="ik2-ss-Ft2" firstAttribute="bottom" secondItem="QWM-Xn-dSA" secondAttribute="bottom" constant="100" id="7sX-sA-Djs"/>
+                            <constraint firstItem="FEB-zE-JUf" firstAttribute="width" secondItem="4rL-Vd-UXd" secondAttribute="width" multiplier="0.8" id="C2U-WM-WZe"/>
+                            <constraint firstItem="Kat-UI-1gB" firstAttribute="trailing" secondItem="FEB-zE-JUf" secondAttribute="trailing" id="So2-5v-Sf9"/>
+                            <constraint firstItem="FEB-zE-JUf" firstAttribute="height" secondItem="4rL-Vd-UXd" secondAttribute="height" multiplier="0.04" id="aOj-MY-fHg"/>
+                            <constraint firstItem="bW1-8w-4RH" firstAttribute="leading" secondItem="FEB-zE-JUf" secondAttribute="leading" id="abZ-ye-OIb"/>
+                            <constraint firstItem="bW1-8w-4RH" firstAttribute="top" secondItem="FEB-zE-JUf" secondAttribute="bottom" constant="10" id="eNf-1Y-zLT"/>
+                            <constraint firstItem="QWM-Xn-dSA" firstAttribute="top" secondItem="FEB-zE-JUf" secondAttribute="bottom" constant="40" id="kjV-M1-SF9"/>
+                            <constraint firstItem="QWM-Xn-dSA" firstAttribute="centerX" secondItem="ik2-ss-Ft2" secondAttribute="centerX" id="lHP-S3-gmE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playPauseButton" destination="QWM-Xn-dSA" id="8CV-4u-iMh"/>
+                        <outlet property="startTimeDuration" destination="bW1-8w-4RH" id="ECp-5f-igG"/>
+                        <outlet property="totalSongDuration" destination="Kat-UI-1gB" id="rOJ-Me-h2j"/>
+                        <outlet property="waveformContainerView" destination="FEB-zE-JUf" id="RZL-hg-QJT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osy-XQ-O7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2313.0841121495328" y="80.993520518358537"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
